@@ -1,0 +1,7 @@
+{
+  "name": "AURA CINEMATICS — Creative Visual Studio",
+  "description": "Cinematic photography, videography, and AI production studio transforming events, weddings, and commercial business brands with 8K visuals, virtual product shoots, and neural cinema.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

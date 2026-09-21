@@ -1,0 +1,310 @@
+{
+  "nav": {
+    "intro": "INTRO",
+    "aiStudio": "AI BUSINESS ADS",
+    "whatWeCreate": "WHAT WE CREATE",
+    "vision": "VISION",
+    "experience": "THE EXPERIENCE",
+    "conceptShowcase": "CONCEPTS",
+    "behindTheLens": "BEHIND THE LENS",
+    "network": "THE PEOPLE",
+    "work": "OUR WORK",
+    "reels": "REELS",
+    "contact": "CONTACT",
+    "letsCreate": "LET'S CREATE",
+    "clientPortal": "CLIENT VAULT",
+    "adminTitle": "Studio Admin Dashboard",
+    "mobileNavTitle": "Studio Navigation"
+  },
+  "hero": {
+    "emblem": "EVENT OFFER • FLAT 5% OFF ON BOOKINGS",
+    "headlinePart1": "YOUR MOMENTS.",
+    "headlinePart2": "OUR VISION.",
+    "subtitle": "Photography & Videography for moments that matter.",
+    "ctaCreate": "LET'S CREATE",
+    "ctaExplore": "EXPLORE",
+    "conceptNotice": "CONCEPT DEMO BENCHMARK",
+    "audioMuted": "Audio Muted",
+    "audioLive": "Audio Live"
+  },
+  "brandIntro": {
+    "badge": "EST. 2026",
+    "headingLine1": "A NEW STUDIO.",
+    "headingLine2": "A NEW PERSPECTIVE.",
+    "text": "We're at the beginning of our journey — building a visual studio around creativity, storytelling and meaningful moments.",
+    "subtext": "Honest visual craft, intentional cinematography, and an unfiltered passion for human connection.",
+    "pillar1Tag": "INTENTIONAL CRAFT",
+    "pillar1Title": "Every Frame Considered",
+    "pillar1Desc": "We don't shoot volume for the sake of it. We look for the subtle glance, the unforced laugh, and architectural harmony.",
+    "pillar2Tag": "MODERN PERSPECTIVE",
+    "pillar2Title": "Cinematic & Contemporary",
+    "pillar2Desc": "Rejecting rigid poses and artificial theatrics. We bring an authentic cinema-grade eye to real moments.",
+    "pillar3Tag": "DEDICATED CARE",
+    "pillar3Title": "Uncompromised Devotion",
+    "pillar3Desc": "As a new studio, your story receives our complete artistic focus, personal involvement, and bespoke post-production."
+  },
+  "whatWeCreate": {
+    "badge": "CREATIVE CAPABILITIES & SERVICES",
+    "heading": "WHAT WE CREATE",
+    "subtitle": "Our core services designed to turn emotions, celebrations, and concepts into enduring visual stories.",
+    "enquireService": "ENQUIRE THIS SERVICE",
+    "photography": {
+      "title": "Photography",
+      "desc": "Beautiful, natural and creative photographs."
+    },
+    "videography": {
+      "title": "Videography",
+      "desc": "Professional visual coverage with a cinematic approach."
+    },
+    "cinematicFilms": {
+      "title": "Cinematic Films",
+      "desc": "Story-driven videos designed around emotion and atmosphere."
+    },
+    "reels": {
+      "title": "Reels & Short Videos",
+      "desc": "Vertical content for Instagram, social media and digital platforms."
+    },
+    "creativeVisuals": {
+      "title": "Creative Visuals",
+      "desc": "Concept-driven photography and visual content for brands, people and events."
+    }
+  },
+  "creativeVision": {
+    "badge": "OUR CREATIVE VISION",
+    "heading": "EVERY FRAME HAS A STORY.",
+    "text": "We believe the smallest moments can become the most meaningful memories. Our goal is to capture real emotions, beautiful details and cinematic moments with a fresh visual perspective.",
+    "pill1": "Unscripted Emotion",
+    "pill1Desc": "Real, honest human reactions that can never be staged or replicated.",
+    "pill2": "Atmospheric Light",
+    "pill2Desc": "Harnessing natural and subtle practical illumination for cinematic mood.",
+    "pill3": "Cinematic Framing",
+    "pill3Desc": "Compositions inspired by timeless widescreen cinema and fine art.",
+    "pill4": "Heirloom Color",
+    "pill4Desc": "Carefully tuned analog color palettes that stand the test of time."
+  },
+  "experience": {
+    "badge": "HOW WE WORK",
+    "heading": "THE EXPERIENCE",
+    "subtitle": "A thoughtful, transparent five-stage journey from your first thought to final delivery.",
+    "step1Title": "DISCOVER",
+    "step1Desc": "We understand your event, idea and vision.",
+    "step2Title": "PLAN",
+    "step2Desc": "We plan the visual approach and coverage.",
+    "step3Title": "CAPTURE",
+    "step3Desc": "We focus on real moments, emotions and details.",
+    "step4Title": "CREATE",
+    "step4Desc": "We transform the captured material into photographs, films and short-form content.",
+    "step5Title": "DELIVER",
+    "step5Desc": "You receive your final visual memories in a professional format."
+  },
+  "conceptShowcase": {
+    "badge": "PORTFOLIO & VISUAL CRAFT",
+    "heading": "WHAT YOUR STORY COULD LOOK LIKE",
+    "subtitle": "Carefully crafted visual examples demonstrating our cinema camera style, tone, and framing across different event moments.",
+    "disclaimer": "Transparent Benchmark Note: All showcase visuals are creative concept references and demo camera benchmarks, presented with complete honesty while we begin documenting our first client commissions.",
+    "enquireThisStyle": "ENQUIRE THIS STYLE",
+    "items": {
+      "portrait": "Cinematic Video",
+      "portraitSubtitle": "Dynamic Film & Visual Narrative",
+      "portraitDesc": "Story-driven, high-definition cinematic visual capture crafted with emotion and timeless color grading.",
+      "eventMoments": "Event Moments",
+      "eventMomentsSubtitle": "Dynamic Celebration Ambience",
+      "eventMomentsDesc": "Dynamic, documentary coverage of vibrant celebrations and spontaneous joy.",
+      "emotionalMoments": "Emotional Moments",
+      "emotionalMomentsSubtitle": "Quiet, Meaningful Connections",
+      "emotionalMomentsDesc": "The quiet, unscripted glances, tears, and gentle touch that hold timeless meaning.",
+      "creativeShots": "Creative Camera Shots",
+      "creativeShotsSubtitle": "Artistic Perspective & Angles",
+      "creativeShotsDesc": "Artistic angles, foreground elements, and architectural composition.",
+      "shortFormVideo": "Short-form Video",
+      "shortFormVideoSubtitle": "9:16 Vertical Mobile Film",
+      "shortFormVideoDesc": "Fast-paced, mobile-first 9:16 vertical storytelling with rhythm and pulse.",
+      "cinematicFilm": "Cinematic Film",
+      "cinematicFilmSubtitle": "2.39:1 Cinemascope Storytelling",
+      "cinematicFilmDesc": "Story-driven videos designed around emotion and atmosphere."
+    }
+  },
+  "behindTheLens": {
+    "badge": "ABOUT THE STUDIO",
+    "heading": "BEHIND THE LENS",
+    "subtitle": "A small creative setup with a big vision.",
+    "directorTitle": "THE CREATIVE BEHIND THE CAMERA",
+    "directorName": "Yuvraj",
+    "directorRole": "Director of Photography & Founder",
+    "bio": "We started this studio out of a genuine passion for natural light, visual rhythm, and authentic human emotion. Rather than relying on rehearsed poses or artificial theatrics, we bring fresh eyes, patient observation, and relentless care to every frame.",
+    "principlesHeading": "Our Guiding Values",
+    "p1Title": "Fresh Eyes, No Templates",
+    "p1Desc": "Every celebration has its own heartbeat. We treat your story as an original film, never repeating formulaic shots.",
+    "p2Title": "Unobtrusive Presence",
+    "p2Desc": "We believe the best moments happen when people forget the camera is there. We document candidly and respectfully.",
+    "p3Title": "Obsession with Craft",
+    "p3Desc": "From deliberate composition to filmic color grading, we obsess over every frame so your memories endure."
+  },
+  "peopleBehindTheFrame": {
+    "badge": "CREATIVE NETWORK • EST. 2026",
+    "heading": "THE PEOPLE BEHIND THE FRAME",
+    "supportingText": "50+ creative professionals working together to bring ideas, moments and visual stories to life.",
+    "supportingLine": "Different skills. One creative vision.",
+    "statHighlight": "50+",
+    "statLabel": "CREATIVE PROFESSIONALS",
+    "statSub": "A growing collaborative network across Chhattisgarh & destinations across India",
+    "statPillars": [
+      { "num": "50+", "label": "Connected Creatives & Editors", "detail": "Curated talent across post-production, camera & audio" },
+      { "num": "12+", "label": "Core Disciplines", "detail": "From Reel cutters to master colorists & DPs" },
+      { "num": "20+", "label": "Geographic Hubs", "detail": "Raipur, Bilaspur, Mumbai, Delhi, Jaipur & beyond" },
+      { "num": "1", "label": "Unified Cinema Standard", "detail": "Singular creative direction with zero compromise" }
+    ],
+    "pillar1Num": "50+",
+    "pillar1Label": "Connected Creatives & Editors",
+    "pillar1Detail": "Curated talent across post-production, camera & audio",
+    "pillar2Num": "12+",
+    "pillar2Label": "Core Disciplines",
+    "pillar2Detail": "From Reel cutters to master colorists & DPs",
+    "pillar3Num": "20+",
+    "pillar3Label": "Geographic Hubs",
+    "pillar3Detail": "Raipur, Bilaspur, Mumbai, Delhi, Jaipur & beyond",
+    "pillar4Num": "1",
+    "pillar4Label": "Unified Cinema Standard",
+    "pillar4Detail": "Singular creative direction with zero compromise",
+    "filterAll": "All (50+)",
+    "filterPost": "Editors & Post-Production",
+    "filterCinematography": "Cinematography",
+    "filterPhotography": "Photography",
+    "filterAerial": "Drone & Aerial",
+    "filterAudio": "Sound & Audio",
+    "filterLighting": "Lighting & Directing",
+    "searchPlaceholder": "Search artist, tool, or hub...",
+    "showingLabel": "Active Network Members",
+    "badgeVerified": "Verified Talent",
+    "inquireRole": "Inquire With This Specialty",
+    "collaborativeManifesto": "Bespoke Crew Formation",
+    "collaborativeTitle": "Bespoke Crew Formation for Every Event",
+    "collaborativeText": "We curate custom teams for every commission based on the unique visual style, lighting requirements, and geographic scope of your project. You benefit from atelier intimacy backed by collective production firepower.",
+    "ctaInquire": "COMMISSION A CREW FOR YOUR VISION"
+  },
+  "ourWork": {
+    "badge": "PORTFOLIO ARCHIVES",
+    "heading": "OUR WORK IS JUST BEGINNING.",
+    "text": "Every project becomes part of our story. Explore our work as we grow.",
+    "emptyNotice": "As a new studio established in 2026, we are currently booking our inaugural event commissions. When completed, real client projects will be published here with full photo collections and films.",
+    "cta": "START A CONVERSATION",
+    "categories": {
+      "ALL": "ALL",
+      "Wedding": "Wedding",
+      "Festival": "Festival",
+      "Cultural": "Cultural Event",
+      "Birthday": "Birthday",
+      "Corporate": "Corporate",
+      "Portrait": "Portrait",
+      "Fashion": "Fashion",
+      "Music": "Music",
+      "Other": "Other Events"
+    }
+  },
+  "reels": {
+    "badge": "VERTICAL STORIES",
+    "heading": "REELS & SHORT STORIES",
+    "comingSoon": "Short-form visual stories — coming soon.",
+    "comingSoonDesc": "We are curating vertical 9:16 cinematic moments and teasers from our upcoming shoots. Follow our journey as our first series drops."
+  },
+  "booking": {
+    "badge": "GET IN TOUCH",
+    "heading": "LET'S CREATE SOMETHING MEANINGFUL.",
+    "subtitle": "Have an event, idea or story you want to capture? Let's talk.",
+    "storyPrompt": "Have an event, idea or story?",
+    "storyDesc": "We are booking our 2026 calendar and are excited to discuss your vision, location, and creative ideas.",
+    "hotline": "Studio Direct Line",
+    "directEmail": "Direct Email",
+    "ateliers": "Main Branch",
+    "mainBranchAddress": "Bhilai - 491001, Chhattisgarh",
+    "responseTime": "⚡ Direct consultation within 24 hours.",
+    "labels": {
+      "name": "Name *",
+      "namePlaceholder": "Your Name",
+      "phone": "WhatsApp Number *",
+      "phonePlaceholder": "+91 98276 XXXXX",
+      "email": "Email Address",
+      "emailPlaceholder": "your.name@example.com",
+      "date": "Event Date",
+      "location": "Location / City",
+      "locationPlaceholder": "City, Venue or Region",
+      "pincode": "PIN Code",
+      "pincodePlaceholder": "e.g. 492001",
+      "requiredService": "Required Service",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your event, ideas, or questions...",
+      "submit": "START A CONVERSATION",
+      "submitting": "SENDING...",
+      "errorRequired": "Please provide your name and WhatsApp number."
+    },
+    "success": {
+      "title": "CONVERSATION INITIATED",
+      "message": "Thank you {name}. Your inquiry has been sent directly to rajasahu69774@gmail.com. We will connect with you via WhatsApp at {phone} shortly.",
+      "another": "SUBMIT ANOTHER INQUIRY"
+    }
+  },
+  "whatsapp": {
+    "ariaLabel": "Chat on WhatsApp",
+    "tooltip": "Chat with Studio on WhatsApp",
+    "prefill": "Hello, I would like to enquire about your photography/videography services."
+  },
+  "footer": {
+    "tagline": "“A new creative photography and videography studio built around storytelling and meaningful moments.”",
+    "estBadge": "CREATIVE STUDIO • EST. 2026",
+    "navHeading": "EXPLORE",
+    "aiStudioLink": "AI Creative Lab (12+ Workflows)",
+    "introLink": "Studio Intro",
+    "createLink": "What We Create",
+    "visionLink": "Creative Vision",
+    "experienceLink": "The Experience",
+    "conceptLink": "Concept Showcase",
+    "btsLink": "Behind The Lens",
+    "networkLink": "The People (50+)",
+    "workLink": "Our Work",
+    "reelsLink": "Reels",
+    "contactLink": "Let's Create",
+    "clientAccessHeading": "PRIVATE CLIENT ACCESS",
+    "clientAccessDesc": "Private encrypted galleries for clients to preview, select and download high-resolution photos.",
+    "clientPortalBtn": "Client Vault",
+    "adminBtn": "Admin CMS",
+    "backToTop": "BACK TO TOP"
+  },
+  "admin": {
+    "title": "Studio Management & CMS",
+    "subtitle": "Aura Cinematics • EST. 2026 Control Center",
+    "tabs": {
+      "projects": "Projects",
+      "enquiries": "Client Enquiries",
+      "galleries": "Client Vaults"
+    },
+    "enquiries": {
+      "heading": "Client Inquiries",
+      "badge": "{count} Enquiries Recorded",
+      "empty": "No client enquiries received yet.",
+      "status": {
+        "New": "New",
+        "Contacted": "Contacted",
+        "Booked": "Booked",
+        "Archived": "Archived"
+      }
+    },
+    "projects": {
+      "heading": "Completed Projects",
+      "badge": "{count} Live Projects",
+      "empty": "No projects published yet. Business established in 2026.",
+      "addBtn": "+ Add Real Project",
+      "modalTitle": "Add Real Completed Project"
+    }
+  },
+  "clientPortal": {
+    "title": "PRIVATE CLIENT VAULT",
+    "subtitle": "Access your bespoke high-resolution photo collection and cinema masters with your private access PIN.",
+    "enterCodeLabel": "Gallery Code",
+    "codePlaceholder": "e.g. AURA-2026",
+    "enterPinLabel": "Security PIN",
+    "pinPlaceholder": "4-digit PIN",
+    "unlockBtn": "UNLOCK GALLERY",
+    "errorInvalid": "Invalid gallery code or PIN. Please check your credentials or contact the studio.",
+    "backToHome": "Return to Studio"
+  }
+}

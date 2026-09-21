@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', 'Rozha One', 'Martel', serif;
+    --font-cormorant: 'Cormorant Garamond', 'Martel', serif;
+    --font-body: 'Plus Jakarta Sans', 'Mukta', sans-serif;
+  }
+
+  [lang="hi"] {
+    --font-display: 'Rozha One', 'Martel', serif;
+    --font-cormorant: 'Martel', serif;
+    --font-body: 'Mukta', 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  html {
+    font-family: var(--font-body);
+    background-color: #09090b;
+    color: #f4f4f5;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-cormorant);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom cinematic scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Film grain subtle overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
