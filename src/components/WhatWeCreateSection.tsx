@@ -61,12 +61,12 @@ export const WhatWeCreateSection: React.FC<WhatWeCreateSectionProps> = ({
     },
     {
       id: 'ai-creative-suite',
-      title: isHi ? 'AI क्रिएटिव लैब (12+ कार्य)' : 'AI Creative Suite (12+ Workflows)',
+      title: isHi ? 'AI बिज़नेस ऐड्स (₹5,000 - ₹10,000)' : 'AI Business Ads (₹5,000 - ₹10,000)',
       desc: isHi
-        ? 'न्यूरल 8K रिस्टोरेशन, AI वीडियो जेनरेशन, हॉलीवुड कलर ट्रांसफर और ऑटोमेटेड रील्स के साथ पूर्ण एआई सुइट।'
-        : '12+ specialized AI workflows — neural 8K upscaling, AI video diffusion, voice remastering, and viral reels automation.',
+        ? 'नो कैमरा • नो मॉडल • नो कैरेक्टर • नो हिडन चार्ज | सिर्फ शुद्ध AI फिल्म, AI सिनेमैटिक, AI ऐड और AI पावरफुल ऐड्स।'
+        : 'No Camera • No Model • No Character • No Hidden Charges | Pure AI Film, AI Cinematic, AI Ad & Powerful Ads.',
       icon: Sparkles,
-      badge: '06 • AI LAB (NEW)',
+      badge: '06 • AI ADS (₹5K-₹10K)',
       image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
       isAiCard: true,
     },
@@ -155,21 +155,21 @@ export const WhatWeCreateSection: React.FC<WhatWeCreateSectionProps> = ({
                     }}
                     className={`text-xs font-mono uppercase tracking-widest flex items-center gap-2 group-hover:translate-x-1 transition-transform ${
                       cap.id === 'ai-creative-suite'
-                        ? 'text-purple-300 font-bold'
+                        ? 'text-cyan-300 font-bold'
                         : 'text-[#d4af37]'
                     }`}
                   >
                     <span>
                       {cap.id === 'ai-creative-suite'
                         ? isHi
-                          ? 'AI लैब एक्सप्लोर करें'
-                          : 'Explore AI Lab'
+                          ? 'AI बिज़नेस ऐड्स देखें (₹5K-₹10K)'
+                          : 'View AI Business Ads (₹5K-₹10K)'
                         : t('whatWeCreate.enquireService')}
                     </span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <span className="text-[10px] font-mono text-zinc-600">
-                    {cap.id === 'ai-creative-suite' ? '12+ WORKFLOWS' : 'EST. 2026'}
+                    {cap.id === 'ai-creative-suite' ? '₹5K - ₹10K' : 'EST. 2026'}
                   </span>
                 </div>
               </motion.div>

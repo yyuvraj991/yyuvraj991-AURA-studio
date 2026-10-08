@@ -11,6 +11,7 @@ import {
   Music,
   MapPin,
   ArrowRight,
+  Bot,
 } from 'lucide-react';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
@@ -31,6 +32,7 @@ interface CreativeArtist {
   avatar: string;
   specialty: string;
   specialtyHi: string;
+  hasBotLogo?: boolean;
 }
 
 interface PeopleBehindTheFrameSectionProps {
@@ -77,9 +79,10 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
       tools: ['DaVinci Resolve Studio', 'Color Grading Panel', 'ACES Workflow'],
       bio: 'Crafting organic Kodak 2383 film-print emulation, custom skin-tone palettes, and mood-adaptive evening lighting grades.',
       bioHi: 'प्राकृतिक कोडक 2383 फ़िल्म प्रिंट लुक, बेदाग स्किन-टोन पैलेट और शाम की रोशनी का सिनेमाई ग्रेडिंग।',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
       specialty: 'Filmic Color Science & Tone Balancing',
       specialtyHi: 'फ़िल्मी कलर साइंस एवं टोन बैलेंसिंग',
+      hasBotLogo: true,
     },
     {
       id: 'artist-3',
@@ -100,20 +103,21 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
     },
     {
       id: 'artist-4',
-      name: 'Mikesh Sahu',
-      role: 'Director of Photography (DP)',
-      roleHi: 'सिनेमैटोग्राफ़ी निदेशक (DP)',
+      name: 'Mukesh Sahu',
+      role: 'Creative Director & Music Video Producer (Manve Films)',
+      roleHi: 'क्रिएटिव डायरेक्टर एवं म्यूज़िक वीडियो प्रोड्यूसर (मानवे फ़िल्म्स)',
       discipline: 'cinema',
       city: 'Bhilai / Raipur',
       cityHi: 'भिलाई / रायपुर',
       experience: '8+ Years',
       experienceHi: '8+ वर्ष अनुभव',
-      tools: ['RED V-Raptor', 'Sony FX6 Cinema', 'Cooke Anamorphic Lenses'],
-      bio: 'Painterly chiaroscuro framing, graceful handheld tracking, and deliberate natural light manipulation.',
-      bioHi: 'चित्रकला जैसी फ़्रेमिंग, सहज हैंडहेल्ड ट्रैकिंग और प्राकृतिक प्रकाश का कलात्मक उपयोग।',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-      specialty: 'Cinemascope Low-Light Lighting',
-      specialtyHi: 'सिनेमास्कोप लो-लाइट एवं नाईट लाइटिंग',
+      tools: ['Manve Films (YouTube)', 'Music Albums', 'Sony Cinema Line', 'DaVinci Resolve'],
+      bio: 'Visionary creator behind Manve Films, directing hit music albums, song videos, dynamic YouTube productions, and cinematic visual stories.',
+      bioHi: 'मानवे फ़िल्म्स यूट्यूब चैनल के निर्माता, सुपरहिट म्यूज़िक एल्बम्स, सॉन्ग्स और भव्य सिनेमाई वीडियो निर्माण के कुशल निर्देशक।',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
+      specialty: 'Music Albums, Songs & YouTube Video Production',
+      specialtyHi: 'म्यूज़िक एल्बम्स, सॉन्ग्स व यूट्यूब वीडियो निर्माण',
+      hasBotLogo: true,
     },
     {
       id: 'artist-5',
@@ -128,9 +132,10 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
       tools: ['Sony A7R V', 'Hasselblad X2D', 'Leica 35mm f/1.4 Summilux'],
       bio: 'Unobtrusive documentary style, capturing fleeting micro-expressions, bridal intimate portraits, and timeless family candids.',
       bioHi: 'स्वाभाविक दस्तावेज़ी शैली, सूक्ष्म भावों, दुल्हन के भावुक पलों और पारिवारिक खुशियों को कैमरे में संजोना।',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
       specialty: 'Fine-Art Emotional Photojournalism',
       specialtyHi: 'फ़ाइन-आर्ट इमोशनल कैंडिड फ़ोटोग्राफ़ी',
+      hasBotLogo: true,
     },
     {
       id: 'artist-6',
@@ -145,26 +150,10 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
       tools: ['DJI Inspire 3 (8K Full Frame)', 'Custom FPV 6S CineWhoop'],
       bio: 'Architectural reveal angles, dynamic low-altitude courtyard flythroughs, and cinematic high-elevation landscape establishing vistas.',
       bioHi: 'विशाल वेन्यू के विहंगम दृश्य, आंगन व मंडप के बीच से गतिशील FPV शॉट्स और लैंडस्केप सिनेमैटिक्स।',
-      avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
       specialty: 'Precision Courtyard & Landscape Flythroughs',
       specialtyHi: 'प्रिसिजन वेन्यू फ़्लाईथ्रू व एरियल व्यू',
-    },
-    {
-      id: 'artist-7',
-      name: 'Tanvi Iyer',
-      role: 'Audio Designer & Foley Mixer',
-      roleHi: 'ऑडियो डिज़ाइनर व साउंड मिक्सर',
-      discipline: 'audio',
-      city: 'Bengaluru / Remote',
-      cityHi: 'बेंगलुरु / रिमोट',
-      experience: '5+ Years',
-      experienceHi: '5+ वर्ष अनुभव',
-      tools: ['Pro Tools Ultimate', 'iZotope RX 10', 'Sennheiser MKH 416'],
-      bio: 'Crystal-clear dialogue isolation, ambient venue acoustics recreation, custom Foley textures, and immersive Dolby 5.1 mixing.',
-      bioHi: 'मंत्रोच्चार व वचनों की स्पष्ट रिकॉर्डिंग, वेन्यू की परिवेशीय ध्वनि रीस्टोरेशन और सराउंड साउंड मिक्सिंग।',
-      avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
-      specialty: 'Vow Dialogue Restoration & Ambient Soundscapes',
-      specialtyHi: 'मंत्र व डायलॉग रीस्टोरेशन एवं साउंडस्केप',
+      hasBotLogo: true,
     },
     {
       id: 'artist-8',
@@ -179,9 +168,10 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
       tools: ['Aputure Electro Storm', 'Nanlite Pavotube', 'Wireless DMX'],
       bio: 'Sculpting dimensional light across massive celebration banquets without disturbing sacred ceremonies or guests.',
       bioHi: 'पवित्र रस्मों में बिना किसी बाधा के बड़े मंडपों व महलों में सिनेमाई प्रकाश व्यवस्था तैयार करना।',
-      avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
       specialty: 'Atmospheric Heritage Lighting Design',
       specialtyHi: 'ऐतिहासिक वेन्यू व उत्सव लाइटिंग डिज़ाइन',
+      hasBotLogo: true,
     },
     {
       id: 'artist-9',
@@ -196,9 +186,10 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
       tools: ['After Effects', 'Blender', 'Cinema 4D'],
       bio: 'Bespoke vintage typography title cards, subtle atmospheric particle enhancement, and clean digital object cleanup.',
       bioHi: 'विंटेज सिनेमाई टाइटल कार्ड्स, सूक्ष्म वातावरण कण और आधुनिक ग्राफ़िक्स क्लीनअप।',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+      avatar: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791441483/chat-bot-icon-virtual-smart-260nw-2478937553.webp',
       specialty: 'Vintage Title Typography & Visual Cleanup',
       specialtyHi: 'सिनेमाई टाइटल्स व विजुअल मोशन डिज़ाइन',
+      hasBotLogo: true,
     },
   ];
 
@@ -385,18 +376,34 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
             </button>
 
             <button
-              onClick={() => setSelectedDiscipline('audio')}
+              onClick={() => setSelectedDiscipline('directing')}
               className={`px-3.5 py-1.5 rounded-full text-xs font-mono flex items-center gap-1.5 transition-all ${
-                selectedDiscipline === 'audio'
+                selectedDiscipline === 'directing'
                   ? 'bg-[#d4af37] text-black font-semibold'
                   : 'bg-zinc-900/90 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
               }`}
               onMouseEnter={() => onCursorChange('button')}
               onMouseLeave={() => onCursorChange('default')}
             >
-              <Music className="w-3 h-3" />
-              <span>{t('peopleBehindTheFrame.filterAudio')}</span>
+              <Sparkles className="w-3 h-3" />
+              <span>{t('peopleBehindTheFrame.filterLighting')}</span>
             </button>
+
+            {artists.some((a) => a.discipline === 'audio') && (
+              <button
+                onClick={() => setSelectedDiscipline('audio')}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono flex items-center gap-1.5 transition-all ${
+                  selectedDiscipline === 'audio'
+                    ? 'bg-[#d4af37] text-black font-semibold'
+                    : 'bg-zinc-900/90 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
+                }`}
+                onMouseEnter={() => onCursorChange('button')}
+                onMouseLeave={() => onCursorChange('default')}
+              >
+                <Music className="w-3 h-3" />
+                <span>{t('peopleBehindTheFrame.filterAudio')}</span>
+              </button>
+            )}
           </div>
 
           {/* Search Box */}
@@ -430,15 +437,37 @@ export const PeopleBehindTheFrameSection: React.FC<PeopleBehindTheFrameSectionPr
                   {/* Header with Avatar and Verified Badge */}
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={artist.avatar}
-                        alt={artist.name}
-                        className="w-12 h-12 rounded-full object-cover border border-zinc-700 group-hover:border-[#d4af37] transition-colors"
-                      />
+                      <div className="relative shrink-0">
+                        <img
+                          src={artist.avatar}
+                          alt={artist.name}
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).src = '/bot-avatar.jpg';
+                          }}
+                          className="w-12 h-12 rounded-full object-cover border border-zinc-700 group-hover:border-[#d4af37] transition-colors"
+                        />
+                        {artist.hasBotLogo && (
+                          <div
+                            className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#0a0a0c] border border-[#d4af37] flex items-center justify-center text-[#d4af37] shadow-md shadow-black/80 ring-1 ring-black"
+                            title="AI CineBot"
+                            aria-label="AI CineBot"
+                          >
+                            <Bot className="w-3 h-3" />
+                          </div>
+                        )}
+                      </div>
                       <div>
-                        <h3 className="text-base font-semibold text-zinc-100 group-hover:text-[#d4af37] transition-colors">
-                          {artist.name}
-                        </h3>
+                        <div className="flex items-center gap-1.5">
+                          <h3 className="text-base font-semibold text-zinc-100 group-hover:text-[#d4af37] transition-colors">
+                            {artist.name}
+                          </h3>
+                          {artist.hasBotLogo && (
+                            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#d4af37]/15 text-[#d4af37] border border-[#d4af37]/30">
+                              <Bot className="w-2.5 h-2.5" />
+                              <span>BOT</span>
+                            </span>
+                          )}
+                        </div>
                         <p className="text-xs text-zinc-400 font-mono">
                           {displayRole}
                         </p>

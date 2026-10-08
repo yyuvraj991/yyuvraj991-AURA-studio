@@ -61,6 +61,8 @@ export interface ReelItem {
   likes: string;
   caption: string;
   eventSlug?: string;
+  instagramUrl?: string;
+  backupVideoUrl?: string;
 }
 
 export interface BtsStage {

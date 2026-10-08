@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Smartphone, Film, X, Volume2, VolumeX } from 'lucide-react';
+import { Play, Smartphone, Film, X, Volume2, VolumeX, Instagram, ExternalLink } from 'lucide-react';
 import { ReelItem } from '../types';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
@@ -17,23 +17,51 @@ const ReelCard: React.FC<{
   onCursorChange: (type: CursorType, text?: string) => void;
 }> = ({ reel, onSelect, onCursorChange }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [currentSrc, setCurrentSrc] = useState(reel.videoUrl);
+
+  useEffect(() => {
+    setCurrentSrc(reel.videoUrl);
+  }, [reel.videoUrl]);
+
+  const handleVideoError = () => {
+    if (reel.backupVideoUrl && currentSrc !== reel.backupVideoUrl) {
+      setCurrentSrc(reel.backupVideoUrl);
+    }
+  };
+
+  useEffect(() => {
+    const startPlay = () => {
+      if (videoRef.current) {
+        videoRef.current.play().catch(() => {
+          // Autoplay will succeed when muted
+        });
+      }
+    };
+    startPlay();
+
+    const el = videoRef.current;
+    if (el) {
+      el.addEventListener('loadedmetadata', startPlay);
+      el.addEventListener('canplay', startPlay);
+    }
+    return () => {
+      if (el) {
+        el.removeEventListener('loadedmetadata', startPlay);
+        el.removeEventListener('canplay', startPlay);
+      }
+    };
+  }, [currentSrc]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
     onCursorChange('play', 'WATCH');
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
-    }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
     onCursorChange('default');
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
+    // Keep playing continuously as requested by the user ("taki video chalte rahe")
   };
 
   return (
@@ -45,27 +73,43 @@ const ReelCard: React.FC<{
       onMouseLeave={handleMouseLeave}
       className="aspect-[9/16] rounded-2xl overflow-hidden border border-zinc-800/90 hover:border-[#d4af37]/60 relative group cursor-pointer bg-zinc-950 shadow-xl transition-all"
     >
-      {/* Video & Poster Container */}
+      {/* Video & Poster Container - Continuous Live Playback */}
       <video
         ref={videoRef}
-        src={reel.videoUrl}
+        src={currentSrc}
         poster={reel.posterUrl}
+        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
+        onError={handleVideoError}
         className={`w-full h-full object-cover transition-transform duration-700 ${
           isHovered ? 'scale-105 brightness-105' : 'scale-100 brightness-95'
         }`}
       />
 
-      {/* Center Play Icon Glow (matches CSS selector 1 child) */}
+      {/* Top Indicators: Live Badge & Instagram Link */}
+      <div className="absolute top-3 inset-x-3 flex items-center justify-between z-20 pointer-events-none">
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono font-medium text-white/90">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+          <span>LIVE REEL</span>
+        </span>
+
+        {reel.instagramUrl && (
+          <span className="w-7 h-7 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+            <Instagram className="w-3.5 h-3.5" />
+          </span>
+        )}
+      </div>
+
+      {/* Center Play Icon Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
           className={`w-12 h-12 rounded-full backdrop-blur-md border border-[#d4af37]/50 flex items-center justify-center text-[#d4af37] transition-all duration-300 shadow-2xl ${
             isHovered
               ? 'scale-110 bg-[#d4af37] text-black shadow-[0_0_25px_rgba(212,175,55,0.7)]'
-              : 'bg-black/60 opacity-90 group-hover:opacity-100'
+              : 'bg-black/60 opacity-80 group-hover:opacity-100'
           }`}
         >
           <Play className="w-5 h-5 fill-current translate-x-0.5" />
@@ -94,11 +138,25 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
 }) => {
   const { t } = useTranslation();
   const [activeReel, setActiveReel] = useState<ReelItem | null>(null);
+  const [modalVideoSrc, setModalVideoSrc] = useState<string>('');
   const [isMuted, setIsMuted] = useState(false);
-  const modalVideoRef = React.useRef<HTMLVideoElement | null>(null);
+  const modalVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (activeReel) {
+      setModalVideoSrc(activeReel.videoUrl);
+    }
+  }, [activeReel]);
+
+  const handleModalVideoError = () => {
+    if (activeReel?.backupVideoUrl && modalVideoSrc !== activeReel.backupVideoUrl) {
+      setModalVideoSrc(activeReel.backupVideoUrl);
+    }
+  };
+
+  useEffect(() => {
     if (activeReel && modalVideoRef.current) {
+      modalVideoRef.current.currentTime = 0;
       modalVideoRef.current.play().catch(() => {
         setIsMuted(true);
         if (modalVideoRef.current) {
@@ -204,31 +262,48 @@ export const ReelsSection: React.FC<ReelsSectionProps> = ({
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Sound Toggle */}
-              <button
-                onClick={() => setIsMuted(!isMuted)}
-                className="absolute top-4 left-4 z-30 w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors"
-                aria-label={isMuted ? 'Unmute' : 'Mute'}
-              >
-                {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-              </button>
+              {/* Header Actions: Sound Toggle + Optional Instagram Link */}
+              <div className="absolute top-4 left-4 z-30 flex items-center gap-2">
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors"
+                  aria-label={isMuted ? 'Unmute' : 'Mute'}
+                >
+                  {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                </button>
+
+                {activeReel.instagramUrl && (
+                  <a
+                    href={activeReel.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 px-3.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white text-xs font-mono font-medium flex items-center gap-1.5 shadow-lg hover:opacity-95 transition-all hover:scale-105"
+                    title="Open in Instagram"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                    <span>Watch on Instagram</span>
+                    <ExternalLink className="w-3 h-3 opacity-80" />
+                  </a>
+                )}
+              </div>
 
               {/* Video Element */}
               <video
                 ref={modalVideoRef}
-                src={activeReel.videoUrl}
+                src={modalVideoSrc || activeReel.videoUrl}
                 poster={activeReel.posterUrl}
                 autoPlay
                 loop
                 playsInline
                 muted={isMuted}
+                onError={handleModalVideoError}
                 className="w-full h-full object-cover"
               />
 
               {/* Reel Info Footer */}
-              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none">
+              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none">
                 <span className="text-[10px] font-mono tracking-widest text-[#d4af37] uppercase block mb-1">
-                  STUDIO SHORT STORY
+                  STUDIO SHORT STORY • {activeReel.views} VIEWS
                 </span>
                 <h3 className="text-base font-display font-bold text-white uppercase">
                   {activeReel.title}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, Sparkles, CheckCircle2, Phone, Mail, MapPin, Calendar, Film } from 'lucide-react';
+import { Send, Sparkles, CheckCircle2, Phone, Mail, MapPin, Calendar, Film, MessageCircle } from 'lucide-react';
 import { Enquiry } from '../types';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
@@ -71,10 +71,29 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
       status: 'New',
     };
 
+    // Construct structured WhatsApp message for the studio (+91 98276 66173)
+    const studioWhatsAppNumber = '919827666173';
+    const waText = 
+`✨ *NEW BOOKING INQUIRY - AURA STUDIO* ✨
+
+👤 *Client Name:* ${name.trim()}
+📱 *WhatsApp Number:* ${phone.trim()}
+📧 *Email:* ${email.trim() || 'Not provided'}
+🎯 *Required Service:* ${selectedService}
+📅 *Event Date:* ${eventDate || 'To be finalized'}
+📍 *Location / City:* ${eventLocation || 'To be finalized'}
+📮 *PIN Code:* ${pincode.trim() || 'N/A'}
+
+💬 *Client Message / Notes:*
+${message.trim() || 'No additional notes provided.'}
+
+🌐 _Sent directly from Aura Studio Website_`;
+
+    const waUrl = `https://wa.me/${studioWhatsAppNumber}?text=${encodeURIComponent(waText)}`;
+
     try {
-      // Direct automatic background email delivery to rajasahu69774@gmail.com
-      // User doesn't need to open Gmail or mail client
-      const response = await fetch('https://formsubmit.co/ajax/rajasahu69774@gmail.com', {
+      // 1. Also send background backup notification to email
+      await fetch('https://formsubmit.co/ajax/rajasahu69774@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,14 +113,16 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           Message: message.trim() || 'No additional message',
         }),
       });
-      const data = await response.json();
-      console.log('FormSubmit direct result:', data);
     } catch (err) {
-      console.warn('Silent background email submission notice:', err);
+      console.warn('Background email submission notice:', err);
     } finally {
       onAddEnquiry(newEnquiry);
       setIsSubmitting(false);
       setIsSuccess(true);
+
+      // Automatically open WhatsApp with the complete prefilled inquiry
+      // Works smoothly on both mobile devices (opens WhatsApp app) and desktop (opens WhatsApp Web)
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -215,21 +236,37 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   exit={{ opacity: 0 }}
                   className="py-12 flex flex-col items-center justify-center text-center space-y-4"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#d4af37]/20 border border-[#d4af37] flex items-center justify-center text-[#d4af37] shadow-[0_0_25px_rgba(212,175,55,0.3)]">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-400 shadow-[0_0_25px_rgba(16,185,129,0.3)]">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-display font-bold uppercase text-white">
                     {t('booking.success.title')}
                   </h3>
-                  <p className="text-sm text-zinc-300 max-w-md font-sans">
+                  <p className="text-sm text-zinc-300 max-w-md font-sans leading-relaxed">
                     {t('booking.success.message', { name, phone })}
                   </p>
-                  <button
-                    onClick={resetForm}
-                    className="mt-6 px-6 py-2.5 rounded-sm border border-zinc-700 bg-zinc-900 text-xs font-mono uppercase tracking-widest text-zinc-300 hover:text-white hover:border-[#d4af37] transition-all"
-                  >
-                    {t('booking.success.another')}
-                  </button>
+
+                  {/* Direct WhatsApp open button in case pop-up was blocked */}
+                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                    <a
+                      href={`https://wa.me/919827666173?text=${encodeURIComponent(
+                        `✨ *AURA STUDIO INQUIRY* ✨\n👤 Name: ${name}\n📱 WhatsApp: ${phone}\n🎯 Service: ${selectedService}\n📅 Date: ${eventDate || 'TBD'}\n📍 Location: ${eventLocation || 'TBD'}\n💬 Notes: ${message || 'N/A'}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 rounded bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(37,211,102,0.35)] flex items-center gap-2"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-white" />
+                      <span>Open in WhatsApp (+91 98276 66173)</span>
+                    </a>
+
+                    <button
+                      onClick={resetForm}
+                      className="px-6 py-3 rounded-sm border border-zinc-700 bg-zinc-900 text-xs font-mono uppercase tracking-widest text-zinc-300 hover:text-white hover:border-[#d4af37] transition-all"
+                    >
+                      {t('booking.success.another')}
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">

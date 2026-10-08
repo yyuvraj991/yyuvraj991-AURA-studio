@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Camera, ChevronLeft, ChevronRight, Play, Pause, Sparkles, Film, Award, CheckCircle2 } from 'lucide-react';
+import { Camera, ChevronLeft, ChevronRight, Play, Pause, Sparkles, Film, Award, CheckCircle2, Youtube, Music } from 'lucide-react';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
 
@@ -32,6 +32,12 @@ interface StudioLeader {
   imageAlt: string;
   bioEn: string;
   bioHi: string;
+  youtubeChannel?: {
+    name: string;
+    descriptionEn: string;
+    descriptionHi: string;
+    url?: string;
+  };
   principlesHeadingEn: string;
   principlesHeadingHi: string;
   principles: Principle[];
@@ -96,51 +102,57 @@ export const BehindTheLensSection: React.FC<BehindTheLensSectionProps> = ({ onCu
     },
     {
       id: 'partner',
-      tabLabelEn: '02 • Partner',
-      tabLabelHi: '02 • पार्टनर',
-      badgeEn: 'CO-FOUNDER & CREATIVE PARTNER',
-      badgeHi: 'सह-संस्थापक एवं क्रिएटिव पार्टनर',
-      directorTitleEn: 'THE VISION & PRODUCTION CO-DIRECTOR',
-      directorTitleHi: 'विज़न व प्रोडक्शन के सह-निर्देशक',
-      nameEn: 'Partner Name',
-      nameHi: 'पार्टनर का नाम',
-      roleEn: 'Co-Founder & Creative Director',
-      roleHi: 'सह-संस्थापक एवं रचनात्मक निर्देशक',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=85',
-      imageAlt: 'Co-Founder & Creative Partner',
+      tabLabelEn: '02 • Mukesh Sahu',
+      tabLabelHi: '02 • मुकेश साहू',
+      badgeEn: 'MANVE FILMS • CO-FOUNDER & CREATIVE DIRECTOR',
+      badgeHi: 'मानवे फ़िल्म्स • सह-संस्थापक एवं क्रिएटिव डायरेक्टर',
+      directorTitleEn: 'FOUNDER OF MANVE FILMS • MUSIC ALBUMS & CINEMATIC PRODUCTION',
+      directorTitleHi: 'मानवे फ़िल्म्स के संस्थापक • म्यूज़िक एल्बम, सॉन्ग्स व वीडियो प्रोडक्शन',
+      nameEn: 'Mukesh Sahu',
+      nameHi: 'मुकेश साहू',
+      roleEn: 'Creative Director & Music Video Producer (Manve Films)',
+      roleHi: 'क्रिएटिव डायरेक्टर एवं म्यूज़िक वीडियो प्रोड्यूसर (मानवे फ़िल्म्स)',
+      image: 'https://res.cloudinary.com/dsfl20cs1/image/upload/v1791450812/Gemini_Generated_Image_1ppnm1ppnm1ppnm1.jpg',
+      imageAlt: 'Mukesh Sahu - Manve Films',
       bioEn:
-        'Partnering closely on every project to manage lighting architecture, visual design, and real-time storytelling balance. Ensuring each shoot flows seamlessly from raw celebratory emotion to enduring cinematic art.',
+        'Creator and visionary behind the YouTube channel "Manve Films". Renowned for producing high-vibe music albums, hit songs, captivating YouTube videos, and pristine wedding cinematography with an intuitive flair for rhythm, visual harmony, and emotional storytelling.',
       bioHi:
-        'हर प्रोजेक्ट में विजुअल डिज़ाइन, लाइटिंग आर्किटेक्चर और स्टोरीटेलिंग के समन्वय का नेतृत्व। यह सुनिश्चित करना कि हर शूट सहजता से वास्तविक भावनाओं को स्थायी सिनेमाई कला में रूपांतरित करे।',
-      principlesHeadingEn: 'Guiding Focus',
-      principlesHeadingHi: 'मार्गदर्शक दृष्टिकोण',
+        'यूट्यूब चैनल "मानवे फ़िल्म्स" (Manve Films) के निर्माता एवं विज़नरी डायरेक्टर। सुपरहिट म्यूज़िक एल्बम्स, म्यूज़िक वीडियोज़, क्रिएटिव सॉन्ग्स और भव्य सिनेमाई वीडियो निर्माण के कुशल विशेषज्ञ, जो हर फ्रेम को संगीत और भावनाओं के साथ जीवंत बनाते हैं।',
+      youtubeChannel: {
+        name: 'Manve Films',
+        descriptionEn: 'Official YouTube Channel • Music Albums, Songs & Cinematic Film Productions',
+        descriptionHi: 'ऑफिशियल यूट्यूब चैनल • म्यूज़िक एल्बम्स, सॉन्ग्स और भव्य सिनेमाई वीडियो निर्माण',
+        url: 'https://www.youtube.com',
+      },
+      principlesHeadingEn: 'Creative Pillars',
+      principlesHeadingHi: 'प्रमुख रचनात्मक स्तंभ',
       principles: [
         {
           number: '01',
-          titleEn: 'Cinematic Lighting',
-          titleHi: 'सिनेमैटिक लाइटिंग',
+          titleEn: 'Music Albums & Songs',
+          titleHi: 'म्यूज़िक एल्बम्स व सॉन्ग्स',
           descEn:
-            'Balancing ambient festive glow with delicate accent lighting to craft painterly cinematic frames.',
+            'Crafting captivating original music videos and album concepts with high production values and rhythmic visual storytelling.',
           descHi:
-            'त्योहारी चमक और सूक्ष्म लाइटिंग के सामंजस्य से पेंटिंग जैसी सिनेमाई छवियाँ तैयार करना।',
+            'आकर्षक ओरिजिनल म्यूज़िक वीडियोज़ और नए एल्बम कॉन्सेप्ट्स का निर्माण उच्च प्रोडक्शन वैल्यू के साथ।',
         },
         {
           number: '02',
-          titleEn: 'Seamless Direction',
-          titleHi: 'सहज रचनात्मक निर्देशन',
+          titleEn: 'YouTube & Digital Film',
+          titleHi: 'यूट्यूब एवं डिजिटल वीडियो',
           descEn:
-            'Keeping couples and families relaxed and spontaneous while coordinating multi-camera coverage.',
+            'Directing dynamic high-retention content on Manve Films, blending cinema-grade cameras with vibrant audience engagement.',
           descHi:
-            'परिवार और वर-वधू को तनावमुक्त रखते हुए मल्टी-कैमरा कवरेज को सुचारू रूप से संचालित करना।',
+            'मानवे फ़िल्म्स चैनल पर हाई-इम्पैक्ट कंटेंट, सिनेमा कैमरों और आकर्षक वीडियो डायरेक्शन का उत्कृष्ट मेल।',
         },
         {
           number: '03',
-          titleEn: 'Archival Quality',
-          titleHi: 'स्थायी संग्रहणीय गुणवत्ता',
+          titleEn: 'Visual Harmony & Rhythm',
+          titleHi: 'विजुअल तालमेल व सटीक काम',
           descEn:
-            'Curating crystal-clear audio and timeless finishing so your visual legacy looks spectacular for decades.',
+            'Flawlessly syncing emotive melodies, lighting, and performance to create enduring cinematic masterpieces.',
           descHi:
-            'क्रिस्टल क्लियर ऑडियो और क्लासिक फिनिशिंग ताकि आपकी यादें दशकों तक जीवंत रहें।',
+            'संगीत की धुन, सिनेमाई लाइटिंग और कलाकारों की परफॉर्मेंस का परफेक्ट तालमेल हर वीडियो में।',
         },
       ],
     },
@@ -311,6 +323,37 @@ export const BehindTheLensSection: React.FC<BehindTheLensSectionProps> = ({ onCu
                 <p className="text-sm sm:text-base text-zinc-300 font-sans leading-relaxed border-l-2 border-[#d4af37]/40 pl-4 py-1">
                   {isHindi ? currentLeader.bioHi : currentLeader.bioEn}
                 </p>
+
+                {/* Optional YouTube Channel & Studio Spotlight */}
+                {currentLeader.youtubeChannel && (
+                  <div className="p-3.5 rounded-2xl bg-gradient-to-r from-red-950/40 via-zinc-900/80 to-zinc-900 border border-red-500/30 hover:border-red-500/60 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/50 flex items-center justify-center text-red-400 flex-shrink-0">
+                        <Youtube className="w-5 h-5 fill-red-500 text-white" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-display font-bold text-white text-base">
+                            {currentLeader.youtubeChannel.name}
+                          </span>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono tracking-wider uppercase bg-red-500/20 text-red-300 border border-red-500/40">
+                            YouTube Channel
+                          </span>
+                        </div>
+                        <p className="text-xs text-zinc-400">
+                          {isHindi ? currentLeader.youtubeChannel.descriptionHi : currentLeader.youtubeChannel.descriptionEn}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 self-end sm:self-center">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 text-[11px] font-mono text-zinc-300 border border-zinc-700">
+                        <Music className="w-3.5 h-3.5 text-[#d4af37]" />
+                        <span>{isHindi ? 'म्यूज़िक एल्बम्स व वीडियो' : 'Songs & Albums'}</span>
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Guiding Principles Cards */}
                 <div className="pt-4 border-t border-zinc-800/80 space-y-3">

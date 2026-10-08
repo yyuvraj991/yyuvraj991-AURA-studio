@@ -107,9 +107,9 @@
       "portrait": "Cinematic Video",
       "portraitSubtitle": "Dynamic Film & Visual Narrative",
       "portraitDesc": "Story-driven, high-definition cinematic visual capture crafted with emotion and timeless color grading.",
-      "eventMoments": "Event Moments",
-      "eventMomentsSubtitle": "Dynamic Celebration Ambience",
-      "eventMomentsDesc": "Dynamic, documentary coverage of vibrant celebrations and spontaneous joy.",
+      "eventMoments": "Mera Raja Khamhariya Me Aayega • Festive Video",
+      "eventMomentsSubtitle": "Chhattisgarhi Festive Song • YK HUB",
+      "eventMomentsDesc": "Mera Raja Khamhariya Me Aayega - Vibrant Chhattisgarhi Ganesh festival celebration visual song.",
       "emotionalMoments": "Emotional Moments",
       "emotionalMomentsSubtitle": "Quiet, Meaningful Connections",
       "emotionalMomentsDesc": "The quiet, unscripted glances, tears, and gentle touch that hold timeless meaning.",
@@ -238,8 +238,8 @@
       "errorRequired": "Please provide your name and WhatsApp number."
     },
     "success": {
-      "title": "CONVERSATION INITIATED",
-      "message": "Thank you {name}. Your inquiry has been sent directly to rajasahu69774@gmail.com. We will connect with you via WhatsApp at {phone} shortly.",
+      "title": "REQUEST SENT DIRECTLY TO WHATSAPP",
+      "message": "Thank you {name}. Your inquiry has been forwarded directly to Studio WhatsApp (+91 98276 66173) and our email. Click below if WhatsApp did not open automatically.",
       "another": "SUBMIT ANOTHER INQUIRY"
     }
   },
