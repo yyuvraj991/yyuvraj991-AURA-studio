@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
+import { ChevronDown, Sparkles, ArrowRight, ExternalLink } from 'lucide-react';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
 
@@ -109,6 +109,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCursorChange }) => {
             onMouseLeave={() => onCursorChange('default')}
           >
             {t('hero.ctaExplore')}
+          </a>
+
+          <a
+            id="hero-creative-tool-cta"
+            href="https://fontstudio.pages.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-black/60 border border-[#d4af37]/70 text-[#fef08a] font-semibold text-xs tracking-[0.2em] uppercase hover:bg-[#d4af37]/20 hover:border-[#d4af37] hover:text-white backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.15)] text-center flex items-center justify-center gap-2 group"
+            onMouseEnter={() => onCursorChange('button')}
+            onMouseLeave={() => onCursorChange('default')}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#d4af37] group-hover:rotate-12 transition-transform duration-300" />
+            <span>{t('hero.ctaCreativeTool')}</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
           </a>
         </motion.div>
       </div>
