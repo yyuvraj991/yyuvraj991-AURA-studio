@@ -12,8 +12,8 @@ export interface LanguageOption {
 }
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
-  { code: 'en', label: 'English', shortLabel: 'EN', nativeName: 'English' },
   { code: 'hi', label: 'Hindi', shortLabel: 'हिंदी', nativeName: 'हिंदी' },
+  { code: 'en', label: 'English', shortLabel: 'EN', nativeName: 'English' },
 ];
 
 const translations: Record<Language, any> = {
@@ -32,7 +32,7 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
-const STORAGE_KEY = 'aura_cinematics_language';
+const STORAGE_KEY = 'aura_cinematics_language_v2';
 
 export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
@@ -41,14 +41,11 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       if (saved === 'en' || saved === 'hi') {
         return saved;
       }
-      // Check browser preferences
-      if (typeof navigator !== 'undefined' && navigator.language && navigator.language.startsWith('hi')) {
-        return 'hi';
-      }
     } catch {
       // ignore
     }
-    return 'en';
+    // Default language is Hindi whenever the website opens
+    return 'hi';
   });
 
   const setLanguage = (lang: Language) => {
