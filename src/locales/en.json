@@ -28,6 +28,15 @@
     "audioMuted": "Audio Muted",
     "audioLive": "Audio Live"
   },
+  "creativeTool": {
+    "badge": "AURA CREATIVE TOOL • FREE SUITE",
+    "title": "FontStudio PRO — Indian Typography & Calligraphy Studio",
+    "description": "Next-Gen converter & styling engine for Indian fonts (AMS, Kruti Dev, Shree-Dev). Design cinematic calligraphy, graphic typography, and title artwork for film posters & reels.",
+    "tag1": "⚡ AMS / Kruti Dev",
+    "tag2": "✒️ Indian Calligraphy",
+    "tag3": "🎬 Cinema Poster Titles",
+    "buttonText": "Open FontStudio"
+  },
   "brandIntro": {
     "badge": "EST. 2026",
     "headingLine1": "A NEW STUDIO.",

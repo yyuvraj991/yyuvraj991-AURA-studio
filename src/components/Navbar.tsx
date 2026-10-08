@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Lock, Film, Sparkles } from 'lucide-react';
+import { Menu, X, Lock, Film, Sparkles, ExternalLink } from 'lucide-react';
 import { CursorType } from './CustomCursor';
 import { useTranslation } from '../context/I18nContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -141,6 +141,21 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ADS
               </span>
             </button>
+
+            {/* FontStudio Creative Tool External Link */}
+            <a
+              id="nav-fontstudio-desktop-btn"
+              href="https://fontstudio.pages.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono tracking-wider uppercase transition-all duration-300 bg-amber-950/40 hover:bg-amber-900/60 text-amber-300 hover:text-white border border-amber-500/40"
+              onMouseEnter={() => onCursorChange('button')}
+              onMouseLeave={() => onCursorChange('default')}
+              title="FontStudio PRO - Indian Typography & Calligraphy Studio"
+            >
+              <span>FONTSTUDIO</span>
+              <ExternalLink className="w-2.5 h-2.5 opacity-80" />
+            </a>
           </nav>
 
           {/* Header Actions: Language Switcher + Client Portal + CTA */}
@@ -217,6 +232,27 @@ export const Navbar: React.FC<NavbarProps> = ({
                 COMMERCIAL
               </span>
             </button>
+
+            {/* Mobile FontStudio Tool Highlight */}
+            <a
+              id="mobile-nav-fontstudio-btn"
+              href="https://fontstudio.pages.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-3 rounded-xl flex items-center justify-between transition-all bg-gradient-to-r from-amber-950/60 to-zinc-900 border border-amber-500/40 text-amber-200"
+            >
+              <div className="flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-[#d4af37]" />
+                <span className="font-display uppercase tracking-widest text-sm font-semibold text-white">
+                  FontStudio PRO
+                </span>
+              </div>
+              <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-[#fef08a] border border-amber-500/30 uppercase font-bold flex items-center gap-1">
+                <span>TOOL</span>
+                <ExternalLink className="w-2.5 h-2.5" />
+              </span>
+            </a>
 
             {navLinks.map((link) => (
               <a

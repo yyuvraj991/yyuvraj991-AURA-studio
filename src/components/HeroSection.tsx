@@ -22,7 +22,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCursorChange }) => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-black select-none"
+      className="relative w-full min-h-screen py-24 sm:py-28 flex items-center justify-center overflow-hidden bg-black select-none"
     >
       {/* Background Cinematic Hero Image Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -86,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCursorChange }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto"
+          className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto"
         >
           <a
             id="hero-create-cta"
@@ -110,20 +110,63 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCursorChange }) => {
           >
             {t('hero.ctaExplore')}
           </a>
+        </motion.div>
 
-          <a
-            id="hero-creative-tool-cta"
-            href="https://fontstudio.pages.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-sm bg-black/60 border border-[#d4af37]/70 text-[#fef08a] font-semibold text-xs tracking-[0.2em] uppercase hover:bg-[#d4af37]/20 hover:border-[#d4af37] hover:text-white backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.15)] text-center flex items-center justify-center gap-2 group"
-            onMouseEnter={() => onCursorChange('button')}
-            onMouseLeave={() => onCursorChange('default')}
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#d4af37] group-hover:rotate-12 transition-transform duration-300" />
-            <span>{t('hero.ctaCreativeTool')}</span>
-            <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
-          </a>
+        {/* Creative Tool Showcase Card with Details & Launch CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+          className="mt-8 max-w-2xl w-full mx-auto p-4 sm:p-5 rounded-xl bg-gradient-to-r from-zinc-950/90 via-black/85 to-zinc-950/90 border border-[#d4af37]/40 backdrop-blur-xl shadow-[0_15px_35px_rgba(0,0,0,0.8)] text-left hover:border-[#d4af37]/80 transition-all duration-300 group"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-ping" />
+              <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#fef08a] font-semibold">
+                {t('creativeTool.badge')}
+              </span>
+            </div>
+            <span className="text-[10px] font-mono text-zinc-400 bg-zinc-900/90 px-2.5 py-0.5 rounded border border-zinc-800">
+              fontstudio.pages.dev
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex-1">
+              <h3 className="text-sm sm:text-base font-display font-bold text-white tracking-wide flex items-center gap-2">
+                <span>{t('creativeTool.title')}</span>
+              </h3>
+              <p className="mt-1 text-xs text-zinc-300 font-sans leading-relaxed">
+                {t('creativeTool.description')}
+              </p>
+
+              <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900/90 text-zinc-300 border border-zinc-800">
+                  {t('creativeTool.tag1')}
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900/90 text-zinc-300 border border-zinc-800">
+                  {t('creativeTool.tag2')}
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900/90 text-zinc-300 border border-zinc-800">
+                  {t('creativeTool.tag3')}
+                </span>
+              </div>
+            </div>
+
+            <a
+              id="hero-fontstudio-launch-btn"
+              href="https://fontstudio.pages.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto shrink-0 px-5 py-3 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#e6c45e] hover:from-[#e6c45e] hover:to-[#fef08a] text-black font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center gap-2 text-center"
+              onMouseEnter={() => onCursorChange('button')}
+              onMouseLeave={() => onCursorChange('default')}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-black group-hover:rotate-12 transition-transform duration-300" />
+              <span>{t('creativeTool.buttonText')}</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </motion.div>
       </div>
 
